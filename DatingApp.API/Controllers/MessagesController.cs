@@ -111,7 +111,7 @@ namespace DatingApp.API.Controllers
 
             if (messageFromRepo.SenderId == userId)
                 messageFromRepo.SenderDeleted = true;
-            if (messageFromRepo.RecipientId == userId) // || !messageFromRepo.IsRead)
+            if (messageFromRepo.RecipientId == userId || !messageFromRepo.IsRead)
                 messageFromRepo.RecipientDeleted = true;
 
             if(messageFromRepo.SenderDeleted && messageFromRepo.RecipientDeleted)
